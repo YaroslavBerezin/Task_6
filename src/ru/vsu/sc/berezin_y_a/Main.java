@@ -10,13 +10,13 @@ public class Main {
         Locale.setDefault(Locale.ROOT);
 
         System.out.print("Enter x: ");
-        int x = readNum();
+        double x = readDouble();
 
         System.out.print("Enter n: ");
-        int n = readNum();
+        int n = readInt();
 
         System.out.print("Enter e: ");
-        int e = readNum();
+        double e = readDouble();
 
         System.out.print("1) ");
         System.out.println(findFirstSum(x, n));
@@ -32,20 +32,25 @@ public class Main {
 
     }
 
-    private static int readNum() {
-        Scanner scn= new Scanner(System.in);
+    private static double readDouble() {
+        Scanner scn = new Scanner(System.in);
+        return scn.nextDouble();
+    }
+
+    private static int readInt() {
+        Scanner scn = new Scanner(System.in);
         return scn.nextInt();
     }
 
-    private static int raiseNum(int num, int degree) {
-        int num0 = num;
+    private static double raiseNum(double num, double degree) {
+        double num0 = num;
         for (int i = 1; i < degree; i++) {
             num *= num0;
         }
         return num;
     }
 
-    private static int returnNumModule(int x) {
+    private static double returnNumModule(double x) {
         if (x >= 0) {
             return x;
         } else {
@@ -53,16 +58,16 @@ public class Main {
         }
     }
 
-    private static int findFirstSum(int x, int n) {
-        int sum = 1;
+    private static double findFirstSum(double x, int n) {
+        double sum = 1;
         for (int i = 1; i < n; i++) {
             sum += ((((i + 1) * (i + 2)) / 2) * raiseNum(x, i) * raiseNum(-1, i));
         }
         return sum;
     }
 
-    private static int findSecondSum(int x, int n, int e) {
-        int sum = 0;
+    private static double findSecondSum(double x, int n, double e) {
+        double sum = 0;
         int count = 0;
         if (1 > e) {
             sum++;
@@ -76,8 +81,8 @@ public class Main {
         return sum;
     }
 
-    private static int findThirdSum(int x, int n, int e) {
-        int sum = 0;
+    private static double findThirdSum(double x, int n, double e) {
+        double sum = 0;
         int count = 0;
         if (1 > e) {
             sum++;
@@ -91,7 +96,7 @@ public class Main {
         return sum;
     }
 
-    private static double findFourthSum(int x) {
+    private static double findFourthSum(double x) {
         return 1 / Math.pow((1 + x), 3);
     }
 
