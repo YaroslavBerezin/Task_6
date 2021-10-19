@@ -22,10 +22,10 @@ public class Main {
         System.out.println(findFirstSum(x, n));
 
         System.out.print("2) ");
-        System.out.println(findSecondSum(x, n, e));
+        System.out.println(findSecondAndThirdSum(x, n, e, 1));
 
         System.out.print("3) ");
-        System.out.println(findThirdSum(x, n, e));
+        System.out.println(findSecondAndThirdSum(x, n, e, 10));
 
         System.out.print("4) ");
         System.out.println(findFourthSum(x));
@@ -66,29 +66,14 @@ public class Main {
         return sum;
     }
 
-    private static double findSecondSum(double x, int n, double e) {
+    private static double findSecondAndThirdSum(double x, int n, double e, int divisible) {
         double sum = 0;
         int count = 0;
         if (1 > e) {
             sum++;
         }
         for (int i = 1; count < n; i++) {
-            if (returnNumModule(((((i + 1) * (i + 2)) / 2) * raiseNum(x, i) * raiseNum(-1, i))) > e) {
-                sum += ((((i + 1) * (i + 2)) / 2) * raiseNum(x, i) * raiseNum(-1, i));
-                count++;
-            }
-        }
-        return sum;
-    }
-
-    private static double findThirdSum(double x, int n, double e) {
-        double sum = 0;
-        int count = 0;
-        if (1 > e) {
-            sum++;
-        }
-        for (int i = 1; count < n; i++) {
-            if (returnNumModule(((((i + 1) * (i + 2)) / 2) * raiseNum(x, i) * raiseNum(-1, i))) > (e / 10)) {
+            if (returnNumModule(((((i + 1) * (i + 2)) / 2) * raiseNum(x, i) * raiseNum(-1, i))) > e / divisible) {
                 sum += ((((i + 1) * (i + 2)) / 2) * raiseNum(x, i) * raiseNum(-1, i));
                 count++;
             }
