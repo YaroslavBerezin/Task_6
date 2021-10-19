@@ -11,3 +11,6 @@
 	4) значение функции с помощью методов Math.
 
 ![Image alt](https://github.com/YaroslavBerezin/Task_6/blob/master/9.png)
+
+
+![image](https://user-images.githubusercontent.com/81358883/137874270-c9784e2c-a81d-45cc-af7c-08487e40de70.png)
